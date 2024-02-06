@@ -7,7 +7,7 @@
 # B = Width of footing (ft)
 # L = Length of footing (ft)
 # A = Area of footing (sqr. ft)
-# Q = Force at each point load acting on the footing (lb)
+# Q = Force at each point load acting on the footing (lb) (q*A)/PL
 # v = Poisson's ratio
 # x = Distance of wall from front of footing
 # z2 - z8 = Various depths of soil (ft)
