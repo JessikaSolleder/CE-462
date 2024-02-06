@@ -484,3 +484,4 @@ sigma8i9 = (Q3 * 3 * z8 * r9i ** 2 * R8i9 * ( 1 - 2*v))/(3.1415926 * R8i9 ** 2 *
 sigma8abcdefghi9 = sigma8a9 + sigma8b9 + sigma8c9 + sigma8d9 + sigma8e9 + sigma8f9 + sigma8g9 + sigma8h9 + sigma8i9
 print("The total stress at z = 8ft is: ", sigma8abcdefghi9, "psf")
 
+
