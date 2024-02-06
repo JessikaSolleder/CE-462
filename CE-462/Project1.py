@@ -417,5 +417,39 @@ sigma2i9 = (Q * 3 * z2 * r9i ** 2 * R2i9 * ( 1 - 2*v))/(3.1415926 * R2i9 ** 2 * 
 sigma2abcdefghi9 = sigma2a9 + sigma2b9 + sigma2c9 + sigma2d9 + sigma2e9 + sigma2f9 + sigma2g9 + sigma2h9 + sigma2i9
 print("The total stress at z = 2ft is: ", sigma2abcdefghi9, "psf")
 
+sigma4a9 = (Q * 3 * z4 * r9a ** 2 * R4a9 * ( 1 - 2*v))/(3.1415926 * R4a9 ** 2 * R4a9 **3 * (R4a9 + z4))
+sigma4b9 = (Q * 3 * z4 * r9b ** 2 * R4b9 * ( 1 - 2*v))/(3.1415926 * R4b9 ** 2 * R4b9 **3 * (R4b9 + z4))
+sigma4c9 = (Q * 3 * z4 * r9c ** 2 * R4c9 * ( 1 - 2*v))/(3.1415926 * R4c9 ** 2 * R4c9 **3 * (R4c9 + z4))
+sigma4d9 = (Q * 3 * z4 * r9d ** 2 * R4d9 * ( 1 - 2*v))/(3.1415926 * R4d9 ** 2 * R4d9 **3 * (R4d9 + z4))
+sigma4e9 = (Q * 3 * z4 * r9e ** 2 * R4e9 * ( 1 - 2*v))/(3.1415926 * R4e9 ** 2 * R4e9 **3 * (R4e9 + z4))
+sigma4f9 = (Q * 3 * z4 * r9f ** 2 * R4f9 * ( 1 - 2*v))/(3.1415926 * R4f9 ** 2 * R4f9 **3 * (R4f9 + z4))
+sigma4g9 = (Q * 3 * z4 * r9g ** 2 * R4g9 * ( 1 - 2*v))/(3.1415926 * R4g9 ** 2 * R4g9 **3 * (R4g9 + z4))
+sigma4h9 = (Q * 3 * z4 * r9h ** 2 * R4h9 * ( 1 - 2*v))/(3.1415926 * R4h9 ** 2 * R4h9 **3 * (R4h9 + z4))
+sigma4i9 = (Q * 3 * z4 * r9i ** 2 * R4i9 * ( 1 - 2*v))/(3.1415926 * R4i9 ** 2 * R4i9 **3 * (R4i9 + z4))
+sigma4abcdefghi9 = sigma4a9 + sigma4b9 + sigma4c9 + sigma4d9 + sigma4e9 + sigma4f9 + sigma4g9 + sigma4h9 + sigma4i9
+print("The total stress at z = 4ft is: ", sigma4abcdefghi9, "psf")
 
+sigma6a9 = (Q * 3 * z6 * r9a ** 2 * R6a9 * ( 1 - 2*v))/(3.1415926 * R6a9 ** 2 * R6a9 **3 * (R6a9 + z6))
+sigma6b9 = (Q * 3 * z6 * r9b ** 2 * R6b9 * ( 1 - 2*v))/(3.1415926 * R6b9 ** 2 * R6b9 **3 * (R6b9 + z6))
+sigma6c9 = (Q * 3 * z6 * r9c ** 2 * R6c9 * ( 1 - 2*v))/(3.1415926 * R6c9 ** 2 * R6c9 **3 * (R6c9 + z6))
+sigma6d9 = (Q * 3 * z6 * r9d ** 2 * R6d9 * ( 1 - 2*v))/(3.1415926 * R6d9 ** 2 * R6d9 **3 * (R6d9 + z6))
+sigma6e9 = (Q * 3 * z6 * r9e ** 2 * R6e9 * ( 1 - 2*v))/(3.1415926 * R6e9 ** 2 * R6e9 **3 * (R6e9 + z6))
+sigma6f9 = (Q * 3 * z6 * r9f ** 2 * R6f9 * ( 1 - 2*v))/(3.1415926 * R6f9 ** 2 * R6f9 **3 * (R6f9 + z6))
+sigma6g9 = (Q * 3 * z6 * r9g ** 2 * R6g9 * ( 1 - 2*v))/(3.1415926 * R6g9 ** 2 * R6g9 **3 * (R6g9 + z6))
+sigma6h9 = (Q * 3 * z6 * r9h ** 2 * R6h9 * ( 1 - 2*v))/(3.1415926 * R6h9 ** 2 * R6h9 **3 * (R6h9 + z6))
+sigma6i9 = (Q * 3 * z6 * r9i ** 2 * R6i9 * ( 1 - 2*v))/(3.1415926 * R6i9 ** 2 * R6i9 **3 * (R6i9 + z6))
+sigma6abcdefghi9 = sigma6a9 + sigma6b9 + sigma6c9 + sigma6d9 + sigma6e9 + sigma6f9 + sigma6g9 + sigma6h9 + sigma6i9
+print("The total stress at z = 6ft is: ", sigma6abcdefghi9, "psf")
+
+sigma8a9 = (Q * 3 * z8 * r9a ** 2 * R8a9 * ( 1 - 2*v))/(3.1415926 * R8a9 ** 2 * R8a9 **3 * (R8a9 + z8))
+sigma8b9 = (Q * 3 * z8 * r9b ** 2 * R8b9 * ( 1 - 2*v))/(3.1415926 * R8b9 ** 2 * R8b9 **3 * (R8b9 + z8))
+sigma8c9 = (Q * 3 * z8 * r9c ** 2 * R8c9 * ( 1 - 2*v))/(3.1415926 * R8c9 ** 2 * R8c9 **3 * (R8c9 + z8))
+sigma8d9 = (Q * 3 * z8 * r9d ** 2 * R8d9 * ( 1 - 2*v))/(3.1415926 * R8d9 ** 2 * R8d9 **3 * (R8d9 + z8))
+sigma8e9 = (Q * 3 * z8 * r9e ** 2 * R8e9 * ( 1 - 2*v))/(3.1415926 * R8e9 ** 2 * R8e9 **3 * (R8e9 + z8))
+sigma8f9 = (Q * 3 * z8 * r9f ** 2 * R8f9 * ( 1 - 2*v))/(3.1415926 * R8f9 ** 2 * R8f9 **3 * (R8f9 + z8))
+sigma8g9 = (Q * 3 * z8 * r9g ** 2 * R8g9 * ( 1 - 2*v))/(3.1415926 * R8g9 ** 2 * R8g9 **3 * (R8g9 + z8))
+sigma8h9 = (Q * 3 * z8 * r9h ** 2 * R8h9 * ( 1 - 2*v))/(3.1415926 * R8h9 ** 2 * R8h9 **3 * (R8h9 + z8))
+sigma8i9 = (Q * 3 * z8 * r9i ** 2 * R8i9 * ( 1 - 2*v))/(3.1415926 * R8i9 ** 2 * R8i9 **3 * (R8i9 + z8))
+sigma8abcdefghi9 = sigma8a9 + sigma8b9 + sigma8c9 + sigma8d9 + sigma8e9 + sigma8f9 + sigma8g9 + sigma8h9 + sigma8i9
+print("The total stress at z = 8ft is: ", sigma8abcdefghi9, "psf")
 
