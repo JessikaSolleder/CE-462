@@ -1,0 +1,50 @@
+# Scenario 1 Input Values
+# q = stress on the footing (psf)
+# PL = number of point loads acting on the footing
+# B = Width of footing (ft)
+# L = Length of footing (ft)
+# A = Area of footing (sqr. ft)
+# Q = Force at each point load acting on the footing (lb)
+# v = Poisson's ratio
+# x = Distance of wall from front of footing
+# z2 - z8 = Various depths of soil (ft)
+
+import math
+
+
+q = 10000
+PL = 1
+B = 6
+A = 36
+Q = 36000
+v = 0.35
+x = 5
+z2 = 2
+z4 = 4
+z6 = 6
+z8 = 8
+
+# Retaining wall coordinates
+xW = 0
+yW = 0
+
+# Scenario 1 coordinates (in feet)
+PL1 = (8,0)
+PL1x = 8
+PL1y = 0
+
+# Plan view radial calculation, R^2 = x^2 + y^2 + z^2
+R = 8
+
+# R @ z2
+R2 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft: ", R2)
+
+R4 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft: ", R4)
+
+R6 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft: ", R6)
+
+R8 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft: ", R8)
