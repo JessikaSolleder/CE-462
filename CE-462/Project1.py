@@ -26,32 +26,47 @@ z4 = 4
 z6 = 6
 z8 = 8
 
-# Retaining wall coordinates
+# # Retaining wall coordinates # #
 xW = 0
 yW = 0
 
-# Scenario 1 coordinates (in feet)
+# # Scenario 1 coordinates (in feet) # #
 PL1 = (8,0)
 PL1x = 8
 PL1y = 0
 
-# Plan view radial calculation, r^2 = x^2 + y^2 (in feet)
+# # Plan view radial calculation, r^2 = x^2 + y^2 (in feet) # #
 r = 8
 
+#############################################################
 # R @ z2
+#############################################################
+
 R2 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z2 ** 2))
 print("Radial Calculation for z = 2ft: ", R2)
+
+#############################################################
+# R @ z4
+#############################################################
 
 R4 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z4 ** 2))
 print("Radial Calculation for z = 4ft: ", R4)
 
+#############################################################
+# R @ z6
+#############################################################
+
 R6 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z6 ** 2))
 print("Radial Calculation for z = 6ft: ", R6)
+
+#############################################################
+# R @ z8
+#############################################################
 
 R8 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft: ", R8)
 
-# Stress Calculations Scenario 1 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW, off by factor of 10
+# # Stress Calculations Scenario 1 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW, off by factor of 10 # #
 
 sigma2 = (Q * 3 * z2 * r ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
 print("The stress at z = 2ft is: ", sigma2, "psf")
@@ -92,11 +107,11 @@ z4 = 4
 z6 = 6
 z8 = 8
 
-# Retaining wall coordinates
+# # Retaining wall coordinates # #
 xW = 0
 yW = 0
 
-# Scenario 2 coordinates (in feet)
+# # Scenario 2 coordinates (in feet) # #
 PL4a = (6.5,1.5)
 PL4ax = 6.5
 PL4ay = 1.5
@@ -113,7 +128,7 @@ PL4d = (9.5, 1.5)
 PL4dx = 9.5
 PL4dy = 1.5
 
-# Plan view radial calculation, r^2 = x^2 + y^2 (in feet)
+# # Plan view radial calculation, r^2 = x^2 + y^2 (in feet) # #
 r4a = 6.6708
 r4b = 9.6177
 r4c = 6.6708
@@ -184,7 +199,7 @@ R8d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft at PL d: ", R8d)
 
 
-# Stress Calculations Scenario 2 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW
+# # Stress Calculations Scenario 2 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW # #
 
 sigma2a = (Q * 3 * z2 * r4a ** 2 * R2a * ( 1 - 2*v))/(3.1415926 * R2a ** 2 * R2a **3 * (R2a + z2))
 sigma2b = (Q * 3 * z2 * r4b ** 2 * R2b * ( 1 - 2*v))/(3.1415926 * R2b ** 2 * R2b **3 * (R2b + z2))
@@ -283,7 +298,7 @@ PL9i = (10, 2)
 PL9ix = 10
 PL9iy = 2
 
-# Plan view radial calculation, r^2 = x^2 + y^2 (in feet)
+# # Plan view radial calculation, r^2 = x^2 + y^2 (in feet) # #
 r9a = 6.324555
 r9b = 6.000000
 r9c = 6.324555
@@ -419,7 +434,7 @@ R8i9 = math.sqrt(( PL9ix ** 2 ) + ( PL9iy ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft at PL i: ", R8i9)
 
 
-# Stress Calculations Scenario 3 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW
+# # Stress Calculations Scenario 3 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW # #
 
 sigma2a9 = (Q * 3 * z2 * r9a ** 2 * R2a9 * ( 1 - 2*v))/(3.1415926 * R2a9 ** 2 * R2a9 **3 * (R2a9 + z2))
 sigma2b9 = (Q * 3 * z2 * r9b ** 2 * R2b9 * ( 1 - 2*v))/(3.1415926 * R2b9 ** 2 * R2b9 **3 * (R2b9 + z2))
