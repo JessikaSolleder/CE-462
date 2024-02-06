@@ -48,3 +48,7 @@ print("Radial Calculation for z = 6ft: ", R6)
 
 R8 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft: ", R8)
+
+# Stress Calculations
+
+sigma2 = (Q)
