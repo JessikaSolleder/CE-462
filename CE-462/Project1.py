@@ -10,8 +10,7 @@
 # z2 - z8 = Various depths of soil (ft)
 
 import math
-
-
+ 
 q = 10000
 PL = 1
 B = 6
@@ -51,4 +50,5 @@ print("Radial Calculation for z = 8ft: ", R8)
 
 # Stress Calculations
 
-sigma2 = (Q)
+sigma2 = (Q * 3 * z2 * 8 ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
+print("The stress at z = 2ft is: ", sigma2)
