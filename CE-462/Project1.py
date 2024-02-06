@@ -1,4 +1,7 @@
-# Scenario 1 : 1 PL, Input Values
+#############################################################
+# Scenario 1 : 1 Point Load
+#############################################################
+# # Input Values: # #
 # q = stress on the footing (psf)
 # PL = number of point loads acting on the footing
 # B = Width of footing (ft)
@@ -63,7 +66,10 @@ sigma8 = (Q * 3 * z8 * r ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 *
 print("The stress at z = 8ft is: ", sigma8, "psf")
 
 
-# Scenario 2 : 4 PL, Input Values
+#############################################################
+# Scenario 2 : 4 Point Loads
+#############################################################
+# # Input Values: # #
 # q = stress on the footing (psf)
 # PL = number of point loads acting on the footing
 # B = Width of footing (ft)
@@ -107,15 +113,16 @@ PL4d = (9.5, 1.5)
 PL4dx = 9.5
 PL4dy = 1.5
 
-
 # Plan view radial calculation, r^2 = x^2 + y^2 (in feet)
 r4a = 6.6708
 r4b = 9.6177
 r4c = 6.6708
 r4d = 9.6177
 
-
+#############################################################
 # R @ z2
+#############################################################
+
 R2a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z2 ** 2))
 print("Radial Calculation for z = 2ft at PL a: ", R2a)
 
@@ -128,8 +135,10 @@ print("Radial Calculation for z = 2ft at PL c: ", R2c)
 R2d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z2 ** 2))
 print("Radial Calculation for z = 2ft at PL d: ", R2d)
 
-
+#############################################################
 # R @ z4
+#############################################################
+
 R4a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z4 ** 2))
 print("Radial Calculation for z = 4ft at PL a: ", R4a)
 
@@ -142,8 +151,10 @@ print("Radial Calculation for z = 4ft at PL c: ", R4c)
 R4d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z4 ** 2))
 print("Radial Calculation for z = 4ft at PL d: ", R4d)
 
+#############################################################
+# R @ z6
+#############################################################
 
-#R @ z6
 R6a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z6 ** 2))
 print("Radial Calculation for z = 6ft at PL a: ", R6a)
 
@@ -156,8 +167,10 @@ print("Radial Calculation for z = 6ft at PL c: ", R6c)
 R6d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z6 ** 2))
 print("Radial Calculation for z = 6ft at PL d: ", R6d)
 
+#############################################################
+# R @ z8
+#############################################################
 
-#R @ z8
 R8a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft at PL a: ", R8a)
 
@@ -203,7 +216,10 @@ sigma8abcd = sigma8a + sigma8b + sigma8c + sigma8d
 print("The total stress at z = 8ft is: ", sigma8abcd, "psf")
 
 
-# Scenario 3 : 9 PL, Input Values
+#############################################################
+# Scenario 3 : 9 Point Loads
+#############################################################
+# # Input Values: # #
 # q = stress on the footing (psf)
 # PL = number of point loads acting on the footing
 # B = Width of footing (ft)
@@ -226,11 +242,11 @@ z4 = 4
 z6 = 6
 z8 = 8
 
-# Retaining wall coordinates
+# # Retaining wall coordinates # #
 xW = 0
 yW = 0
 
-# Scenario 3 coordinates (in feet)
+# # Scenario 3 coordinates (in feet) # #
 PL9a = (6,2)
 PL9ax = 6
 PL9ay = 2
