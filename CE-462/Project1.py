@@ -32,7 +32,7 @@ PL1 = (8,0)
 PL1x = 8
 PL1y = 0
 
-# Plan view radial calculation, r^2 = x^2 + y^2 + z^2
+# Plan view radial calculation, r^2 = x^2 + y^2 (in feet)
 r = 8
 
 # R @ z2
@@ -74,8 +74,6 @@ print("The stress at z = 8ft is: ", sigma8, "psf")
 # x = Distance of wall from front of footing
 # z2 - z8 = Various depths of soil (ft)
 
-import math
- 
 q = 10000
 PL = 4
 B = 6
@@ -110,34 +108,69 @@ PL4dx = 9.5
 PL4dy = 1.5
 
 
-# Plan view radial calculation, R^2 = x^2 + y^2 + z^2
-R = 8
+# Plan view radial calculation, r^2 = x^2 + y^2 (in feet)
+r4a = 6.6708
+r4b = 9.6177
+r4c = 6.6708
+r4d = 9.6177
+
 
 # R @ z2
-R2 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z2 ** 2))
-print("Radial Calculation for z = 2ft: ", R2)
+R2a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft: ", R2a)
 
-R4 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z4 ** 2))
-print("Radial Calculation for z = 4ft: ", R4)
+R2b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft: ", R2b)
 
-R6 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z6 ** 2))
-print("Radial Calculation for z = 6ft: ", R6)
+R2c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft: ", R2c)
 
-R8 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z8 ** 2))
-print("Radial Calculation for z = 8ft: ", R8)
+R2d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft: ", R2d)
 
-# Stress Calculations Scenario 1 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW, off by factor of 10
 
-sigma2 = (Q * 3 * z2 * 8 ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
-print("The stress at z = 2ft is: ", sigma2, "psf")
+# R @ z4
+R4a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft: ", R4a)
 
-sigma4 = (Q * 3 * z4 * 8 ** 2 * R4 * ( 1 - 2*v))/(3.1415926 * R4 ** 2 * R4 **3 * (R4 + z4))
-print("The stress at z = 4ft is: ", sigma4, "psf")
+R4b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft: ", R4b)
 
-sigma6 = (Q * 3 * z6 * 8 ** 2 * R6 * ( 1 - 2*v))/(3.1415926 * R6 ** 2 * R6 **3 * (R6 + z6))
-print("The stress at z = 6ft is: ", sigma6, "psf")
+R4c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft: ", R4c)
 
-sigma8 = (Q * 3 * z8 * 8 ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
-print("The stress at z = 8ft is: ", sigma8, "psf")
+R4d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft: ", R4d)
+
+
+#R @ z6
+R6a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft: ", R6a)
+
+R6b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft: ", R6b)
+
+R6c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft: ", R6c)
+
+R6d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft: ", R6d)
+
+
+#R @ z8
+R8a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft: ", R8a)
+
+R8b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft: ", R8b)
+
+R8c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft: ", R8c)
+
+R8d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft: ", R8d)
+
+
+# Stress Calculations Scenario 2 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW, off by factor of 10
 
 
