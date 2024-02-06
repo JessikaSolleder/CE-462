@@ -18,7 +18,7 @@ q = 10000
 PL = 1
 B = 6
 A = 36
-Q = 36000
+Q1 = 36000
 v = 0.35
 x = 5
 z2 = 2
@@ -68,16 +68,16 @@ print("Radial Calculation for z = 8ft: ", R8)
 
 # # Stress Calculations Scenario 1 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW, off by factor of 10 # #
 
-sigma2 = (Q * 3 * z2 * r ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
+sigma2 = (Q1 * 3 * z2 * r ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
 print("The stress at z = 2ft is: ", sigma2, "psf")
 
-sigma4 = (Q * 3 * z4 * r ** 2 * R4 * ( 1 - 2*v))/(3.1415926 * R4 ** 2 * R4 **3 * (R4 + z4))
+sigma4 = (Q1 * 3 * z4 * r ** 2 * R4 * ( 1 - 2*v))/(3.1415926 * R4 ** 2 * R4 **3 * (R4 + z4))
 print("The stress at z = 4ft is: ", sigma4, "psf")
 
-sigma6 = (Q * 3 * z6 * r ** 2 * R6 * ( 1 - 2*v))/(3.1415926 * R6 ** 2 * R6 **3 * (R6 + z6))
+sigma6 = (Q1 * 3 * z6 * r ** 2 * R6 * ( 1 - 2*v))/(3.1415926 * R6 ** 2 * R6 **3 * (R6 + z6))
 print("The stress at z = 6ft is: ", sigma6, "psf")
 
-sigma8 = (Q * 3 * z8 * r ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
+sigma8 = (Q1 * 3 * z8 * r ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
 print("The stress at z = 8ft is: ", sigma8, "psf")
 
 
