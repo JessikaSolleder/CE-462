@@ -51,4 +51,13 @@ print("Radial Calculation for z = 8ft: ", R8)
 # Stress Calculations
 
 sigma2 = (Q * 3 * z2 * 8 ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
-print("The stress at z = 2ft is: ", sigma2)
+print("The stress at z = 2ft is: ", sigma2, "psf")
+
+sigma4 = (Q * 3 * z4 * 8 ** 2 * R4 * ( 1 - 2*v))/(3.1415926 * R4 ** 2 * R4 **3 * (R4 + z4))
+print("The stress at z = 4ft is: ", sigma4, "psf")
+
+sigma6 = (Q * 3 * z6 * 8 ** 2 * R6 * ( 1 - 2*v))/(3.1415926 * R6 ** 2 * R6 **3 * (R6 + z6))
+print("The stress at z = 6ft is: ", sigma6, "psf")
+
+sigma8 = (Q * 3 * z8 * 8 ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
+print("The stress at z = 8ft is: ", sigma8, "psf")
