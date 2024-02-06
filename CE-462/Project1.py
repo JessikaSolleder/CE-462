@@ -66,7 +66,7 @@ print("Radial Calculation for z = 6ft: ", R6)
 R8 = math.sqrt(( PL1x ** 2 ) + ( PL1y ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft: ", R8)
 
-# # Stress Calculations Scenario 1 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW, off by factor of 10 # #
+# # Stress Calculations Scenario 1 # #
 
 sigma2 = (Q1 * 3 * z2 * r ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
 print("The stress at z = 2ft is: ", sigma2, "psf")
@@ -80,6 +80,23 @@ print("The stress at z = 6ft is: ", sigma6, "psf")
 sigma8 = (Q1 * 3 * z8 * r ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
 print("The stress at z = 8ft is: ", sigma8, "psf")
 
+import matplotlib.pyplot as plt
+
+# Extract sigma and z values from the code
+sigma = [sigma2, sigma4, sigma6, sigma8]
+z = [z2, z4, z6, z8]
+
+# Configure the plot
+plt.figure(figsize=(8, 6))
+plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.xlabel('Sigma (psf)')
+plt.ylabel('Depth (ft)')
+plt.title('Stress vs. Depth for Scenario 1')
+plt.grid(True)
+plt.legend()
+
+# Show the plot
+plt.show()
 
 #############################################################
 # Scenario 2 : 4 Point Loads
@@ -199,7 +216,7 @@ R8d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft at PL d: ", R8d)
 
 
-# # Stress Calculations Scenario 2 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW # #
+# # Stress Calculations Scenario 2 # #
 
 sigma2a = (Q2 * 3 * z2 * r4a ** 2 * R2a * ( 1 - 2*v))/(3.1415926 * R2a ** 2 * R2a **3 * (R2a + z2))
 sigma2b = (Q2 * 3 * z2 * r4b ** 2 * R2b * ( 1 - 2*v))/(3.1415926 * R2b ** 2 * R2b **3 * (R2b + z2))
@@ -434,7 +451,7 @@ R8i9 = math.sqrt(( PL9ix ** 2 ) + ( PL9iy ** 2 ) + (z8 ** 2))
 print("Radial Calculation for z = 8ft at PL i: ", R8i9)
 
 
-# # Stress Calculations Scenario 3 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW # #
+# # Stress Calculations Scenario 3 # #
 
 sigma2a9 = (Q3 * 3 * z2 * r9a ** 2 * R2a9 * ( 1 - 2*v))/(3.1415926 * R2a9 ** 2 * R2a9 **3 * (R2a9 + z2))
 sigma2b9 = (Q3 * 3 * z2 * r9b ** 2 * R2b9 * ( 1 - 2*v))/(3.1415926 * R2b9 ** 2 * R2b9 **3 * (R2b9 + z2))
@@ -484,4 +501,32 @@ sigma8i9 = (Q3 * 3 * z8 * r9i ** 2 * R8i9 * ( 1 - 2*v))/(3.1415926 * R8i9 ** 2 *
 sigma8abcdefghi9 = sigma8a9 + sigma8b9 + sigma8c9 + sigma8d9 + sigma8e9 + sigma8f9 + sigma8g9 + sigma8h9 + sigma8i9
 print("The total stress at z = 8ft is: ", sigma8abcdefghi9, "psf")
 
+
+import matplotlib.pyplot as plt
+
+# Extract sigma and z values from the code
+sigma = [sigma2a9, sigma4a9, sigma6a9, sigma8a9,  
+         sigma2b9, sigma4b9, sigma6b9, sigma8b9,  
+         sigma2c9, sigma4c9, sigma6c9, sigma8c9,
+         sigma2d9, sigma4d9, sigma6d9, sigma8d9,
+         sigma2e9, sigma4e9, sigma6e9, sigma8e9,
+         sigma2f9, sigma4f9, sigma6f9, sigma8f9,
+         sigma2g9, sigma4g9, sigma6g9, sigma8g9,
+         sigma2h9, sigma4g9, sigma6g9, sigma8g9,
+         sigma2i9, sigma4i9, sigma6i9, sigma8i9,
+         
+         ]
+z = [z2, z4, z6, z8] * 9  # Repeat z values for each point load
+
+# Configure the plot
+plt.figure(figsize=(10, 6))  # Adjust figure size if needed
+plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.xlabel('Sigma (psf)')
+plt.ylabel('Depth (ft)')
+plt.title('Sigma vs. z for Scenario 3')
+plt.grid(True)
+plt.legend()
+
+# Show the plot
+plt.show()
 
