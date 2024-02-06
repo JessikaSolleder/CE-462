@@ -117,58 +117,58 @@ r4d = 9.6177
 
 # R @ z2
 R2a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z2 ** 2))
-print("Radial Calculation for z = 2ft: ", R2a)
+print("Radial Calculation for z = 2ft at PL a: ", R2a)
 
 R2b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z2 ** 2))
-print("Radial Calculation for z = 2ft: ", R2b)
+print("Radial Calculation for z = 2ft at PL b: ", R2b)
 
 R2c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z2 ** 2))
-print("Radial Calculation for z = 2ft: ", R2c)
+print("Radial Calculation for z = 2ft at PL c: ", R2c)
 
 R2d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z2 ** 2))
-print("Radial Calculation for z = 2ft: ", R2d)
+print("Radial Calculation for z = 2ft at PL d: ", R2d)
 
 
 # R @ z4
 R4a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z4 ** 2))
-print("Radial Calculation for z = 4ft: ", R4a)
+print("Radial Calculation for z = 4ft at PL a: ", R4a)
 
 R4b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z4 ** 2))
-print("Radial Calculation for z = 4ft: ", R4b)
+print("Radial Calculation for z = 4ft at PL b: ", R4b)
 
 R4c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z4 ** 2))
-print("Radial Calculation for z = 4ft: ", R4c)
+print("Radial Calculation for z = 4ft at PL c: ", R4c)
 
 R4d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z4 ** 2))
-print("Radial Calculation for z = 4ft: ", R4d)
+print("Radial Calculation for z = 4ft at PL d: ", R4d)
 
 
 #R @ z6
 R6a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z6 ** 2))
-print("Radial Calculation for z = 6ft: ", R6a)
+print("Radial Calculation for z = 6ft at PL a: ", R6a)
 
 R6b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z6 ** 2))
-print("Radial Calculation for z = 6ft: ", R6b)
+print("Radial Calculation for z = 6ft at PL b: ", R6b)
 
 R6c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z6 ** 2))
-print("Radial Calculation for z = 6ft: ", R6c)
+print("Radial Calculation for z = 6ft at PL c: ", R6c)
 
 R6d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z6 ** 2))
-print("Radial Calculation for z = 6ft: ", R6d)
+print("Radial Calculation for z = 6ft at PL d: ", R6d)
 
 
 #R @ z8
 R8a = math.sqrt(( PL4ax ** 2 ) + ( PL4ay ** 2 ) + (z8 ** 2))
-print("Radial Calculation for z = 8ft: ", R8a)
+print("Radial Calculation for z = 8ft at PL a: ", R8a)
 
 R8b = math.sqrt(( PL4bx ** 2 ) + ( PL4by ** 2 ) + (z8 ** 2))
-print("Radial Calculation for z = 8ft: ", R8b)
+print("Radial Calculation for z = 8ft at PL b: ", R8b)
 
 R8c = math.sqrt(( PL4cx ** 2 ) + ( PL4cy ** 2 ) + (z8 ** 2))
-print("Radial Calculation for z = 8ft: ", R8c)
+print("Radial Calculation for z = 8ft at PL c: ", R8c)
 
 R8d = math.sqrt(( PL4dx ** 2 ) + ( PL4dy ** 2 ) + (z8 ** 2))
-print("Radial Calculation for z = 8ft: ", R8d)
+print("Radial Calculation for z = 8ft at PL d: ", R8d)
 
 
 # Stress Calculations Scenario 2 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW, off by factor of 10
