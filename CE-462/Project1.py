@@ -247,6 +247,27 @@ sigma8d = (Q2 * 3 * z8 * r4d ** 2 * R8d * ( 1 - 2*v))/(3.1415926 * R8d ** 2 * R8
 sigma8abcd = sigma8a + sigma8b + sigma8c + sigma8d
 print("The total stress at z = 8ft is: ", sigma8abcd, "psf")
 
+import matplotlib.pyplot as plt
+
+# Extract sigma and z values from the code
+sigma = [sigma2a, sigma4a, sigma6a, sigma8a,
+         sigma2b, sigma4b, sigma6b, sigma8b,  
+         sigma2c, sigma4c, sigma6c, sigma8c,  
+         sigma2d, sigma4d, sigma6d, sigma8d]  
+
+z = [z2, z4, z6, z8] * 4  # Repeat z values for each point load
+
+# Configure the plot
+plt.figure(figsize=(10, 6))  # Adjust figure size if needed
+plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.xlabel('Sigma (psf)')
+plt.ylabel('Depth (ft)')
+plt.title('Sigma vs. Depth for Scenario 2')
+plt.grid(True)
+plt.legend()
+
+# Show the plot
+plt.show()
 
 #############################################################
 # Scenario 3 : 9 Point Loads
