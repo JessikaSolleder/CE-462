@@ -201,3 +201,221 @@ sigma8c = (Q * 3 * z8 * r4c ** 2 * R8c * ( 1 - 2*v))/(3.1415926 * R8c ** 2 * R8c
 sigma8d = (Q * 3 * z8 * r4d ** 2 * R8d * ( 1 - 2*v))/(3.1415926 * R8d ** 2 * R8d **3 * (R8d + z8))
 sigma8abcd = sigma8a + sigma8b + sigma8c + sigma8d
 print("The total stress at z = 8ft is: ", sigma8abcd, "psf")
+
+
+# Scenario 3 : 9 PL, Input Values
+# q = stress on the footing (psf)
+# PL = number of point loads acting on the footing
+# B = Width of footing (ft)
+# L = Length of footing (ft)
+# A = Area of footing (sqr. ft)
+# Q = Force at each point load acting on the footing (lb)
+# v = Poisson's ratio
+# x = Distance of wall from front of footing
+# z2 - z8 = Various depths of soil (ft)
+
+q = 10000
+PL = 9
+B = 6
+A = 36
+Q = 4000
+v = 0.35
+x = 5
+z2 = 2
+z4 = 4
+z6 = 6
+z8 = 8
+
+# Retaining wall coordinates
+xW = 0
+yW = 0
+
+# Scenario 3 coordinates (in feet)
+PL9a = (6,2)
+PL9ax = 6
+PL9ay = 2
+
+PL9b = (6, 0)
+PL9bx = 6
+PL9by = 0
+
+PL9c = (6, 2)
+PL9cx = 6
+PL9cy = 2
+
+PL9d = (8, 2)
+PL9dx = 8
+PL9dy = 2
+
+PL9e = (8, 0)
+PL9ex = 8
+PL9ey = 0
+
+PL9f = (8, 2)
+PL9fx = 8
+PL9fy = 2
+
+PL9g = (10, 2)
+PL9gx = 10
+PL9gy = 2
+
+PL9h = (10, 0)
+PL9hx = 10
+PL9hy = 0
+
+PL9i = (10, 2)
+PL9ix = 10
+PL9iy = 2
+
+# Plan view radial calculation, r^2 = x^2 + y^2 (in feet)
+r9a = 6.324555
+r9b = 6.000000
+r9c = 6.324555
+r9d = 8.246211
+r9e = 8
+r9f = 8.246211
+r9g = 10.198039
+r9h = 10
+r9i = 10.198039
+
+#############################################################
+# R @ z2
+#############################################################
+
+R2a9 = math.sqrt(( PL9ax ** 2 ) + ( PL9ay ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL a: ", R2a9)
+
+R2b9 = math.sqrt(( PL9bx ** 2 ) + ( PL9by ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL b: ", R2b9)
+
+R2c9 = math.sqrt(( PL9cx ** 2 ) + ( PL9cy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL c: ", R2c9)
+
+R2d9 = math.sqrt(( PL9dx ** 2 ) + ( PL9dy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL d: ", R2d9)
+
+R2e9 = math.sqrt(( PL9ex ** 2 ) + ( PL9ey ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL e: ", R2e9)
+
+R2f9 = math.sqrt(( PL9fx ** 2 ) + ( PL9fy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL f: ", R2f9)
+
+R2g9 = math.sqrt(( PL9gx ** 2 ) + ( PL9gy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL g: ", R2g9)
+
+R2h9 = math.sqrt(( PL9hx ** 2 ) + ( PL9hy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL h: ", R2h9)
+
+R2i9 = math.sqrt(( PL9ix ** 2 ) + ( PL9iy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 2ft at PL i: ", R2i9)
+
+#############################################################
+# R @ z4
+#############################################################
+
+R4a9 = math.sqrt(( PL9ax ** 2 ) + ( PL9ay ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL a: ", R4a9)
+
+R4b9 = math.sqrt(( PL9bx ** 2 ) + ( PL9by ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL b: ", R4b9)
+
+R4c9 = math.sqrt(( PL9cx ** 2 ) + ( PL9cy ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL c: ", R4c9)
+
+R4d9 = math.sqrt(( PL9dx ** 2 ) + ( PL9dy ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL d: ", R4d9)
+
+R4e9 = math.sqrt(( PL9ex ** 2 ) + ( PL9ey ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL e: ", R4e9)
+
+R4f9 = math.sqrt(( PL9fx ** 2 ) + ( PL9fy ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL f: ", R4f9)
+
+R4g9 = math.sqrt(( PL9gx ** 2 ) + ( PL9gy ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL g: ", R4g9)
+
+R4h9 = math.sqrt(( PL9hx ** 2 ) + ( PL9hy ** 2 ) + (z2 ** 2))
+print("Radial Calculation for z = 4ft at PL h: ", R4h9)
+
+R4i9 = math.sqrt(( PL9ix ** 2 ) + ( PL9iy ** 2 ) + (z4 ** 2))
+print("Radial Calculation for z = 4ft at PL i: ", R4i9)
+
+#############################################################
+#R @ z6
+#############################################################
+
+R6a9 = math.sqrt(( PL9ax ** 2 ) + ( PL9ay ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL a: ", R6a9)
+
+R6b9 = math.sqrt(( PL9bx ** 2 ) + ( PL9by ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL b: ", R6b9)
+
+R6c9 = math.sqrt(( PL9cx ** 2 ) + ( PL9cy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL c: ", R6c9)
+
+R6d9 = math.sqrt(( PL9dx ** 2 ) + ( PL9dy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL d: ", R6d9)
+
+R6e9 = math.sqrt(( PL9ex ** 2 ) + ( PL9ey ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL e: ", R6e9)
+
+R6f9 = math.sqrt(( PL9fx ** 2 ) + ( PL9fy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL f: ", R6f9)
+
+R6g9 = math.sqrt(( PL9gx ** 2 ) + ( PL9gy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL g: ", R6g9)
+
+R6h9 = math.sqrt(( PL9hx ** 2 ) + ( PL9hy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 6ft at PL h: ", R6h9)
+
+R6i9 = math.sqrt(( PL9ix ** 2 ) + ( PL9iy ** 2 ) + (z6 ** 2))
+print("Radial Calculation for z = 4ft at PL i: ", R6i9)
+
+#############################################################
+#R @ z8
+#############################################################
+
+R8a9 = math.sqrt(( PL9ax ** 2 ) + ( PL9ay ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL a: ", R8a9)
+
+R8b9 = math.sqrt(( PL9bx ** 2 ) + ( PL9by ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL b: ", R8b9)
+
+R8c9 = math.sqrt(( PL9cx ** 2 ) + ( PL9cy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL c: ", R8c9)
+
+R8d9 = math.sqrt(( PL9dx ** 2 ) + ( PL9dy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL d: ", R8d9)
+
+R8e9 = math.sqrt(( PL9ex ** 2 ) + ( PL9ey ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL e: ", R8e9)
+
+R8f9 = math.sqrt(( PL9fx ** 2 ) + ( PL9fy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL f: ", R8f9)
+
+R8g9 = math.sqrt(( PL9gx ** 2 ) + ( PL9gy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL g: ", R8g9)
+
+R8h9 = math.sqrt(( PL9hx ** 2 ) + ( PL9hy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL h: ", R8h9)
+
+R8i9 = math.sqrt(( PL9ix ** 2 ) + ( PL9iy ** 2 ) + (z8 ** 2))
+print("Radial Calculation for z = 8ft at PL i: ", R8i9)
+
+
+# Stress Calculations Scenario 3 - SOMETHING IS WRONG WITH THESE, VALUES ARE TOO LOW
+
+sigma2a9 = (Q * 3 * z2 * r9a ** 2 * R2a9 * ( 1 - 2*v))/(3.1415926 * R2a9 ** 2 * R2a9 **3 * (R2a9 + z2))
+sigma2b9 = (Q * 3 * z2 * r9b ** 2 * R2b9 * ( 1 - 2*v))/(3.1415926 * R2b9 ** 2 * R2b9 **3 * (R2b9 + z2))
+sigma2c9 = (Q * 3 * z2 * r9c ** 2 * R2c9 * ( 1 - 2*v))/(3.1415926 * R2c9 ** 2 * R2c9 **3 * (R2c9 + z2))
+sigma2d9 = (Q * 3 * z2 * r9d ** 2 * R2d9 * ( 1 - 2*v))/(3.1415926 * R2d9 ** 2 * R2d9 **3 * (R2d9 + z2))
+sigma2e9 = (Q * 3 * z2 * r9e ** 2 * R2e9 * ( 1 - 2*v))/(3.1415926 * R2e9 ** 2 * R2e9 **3 * (R2e9 + z2))
+sigma2f9 = (Q * 3 * z2 * r9f ** 2 * R2f9 * ( 1 - 2*v))/(3.1415926 * R2f9 ** 2 * R2f9 **3 * (R2f9 + z2))
+sigma2g9 = (Q * 3 * z2 * r9g ** 2 * R2g9 * ( 1 - 2*v))/(3.1415926 * R2g9 ** 2 * R2g9 **3 * (R2g9 + z2))
+sigma2h9 = (Q * 3 * z2 * r9h ** 2 * R2h9 * ( 1 - 2*v))/(3.1415926 * R2h9 ** 2 * R2h9 **3 * (R2h9 + z2))
+sigma2i9 = (Q * 3 * z2 * r9i ** 2 * R2i9 * ( 1 - 2*v))/(3.1415926 * R2i9 ** 2 * R2i9 **3 * (R2i9 + z2))
+sigma2abcdefghi9 = sigma2a9 + sigma2b9 + sigma2c9 + sigma2d9 + sigma2e9 + sigma2f9 + sigma2g9 + sigma2h9 + sigma2i9
+print("The total stress at z = 2ft is: ", sigma2abcdefghi9, "psf")
+
+
+
