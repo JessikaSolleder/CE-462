@@ -36,7 +36,7 @@ PL1x = 8
 PL1y = 0
 
 # # Plan view radial calculation, r^2 = x^2 + y^2 (in feet) # #
-r = 8
+r1 = 8
 
 #############################################################
 # R @ z2
@@ -68,16 +68,16 @@ print("Radial Calculation for z = 8ft: ", R8)
 
 # # Stress Calculations Scenario 1 # #
 
-sigma2 = (Q1 * 3 * z2 * r ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
+sigma2 = (Q1 * 3 * z2 * r1 ** 2 * R2 * ( 1 - 2*v))/(3.1415926 * R2 ** 2 * R2 **3 * (R2 + z2))
 print("The stress at z = 2ft is: ", sigma2, "psf")
 
-sigma4 = (Q1 * 3 * z4 * r ** 2 * R4 * ( 1 - 2*v))/(3.1415926 * R4 ** 2 * R4 **3 * (R4 + z4))
+sigma4 = (Q1 * 3 * z4 * r1 ** 2 * R4 * ( 1 - 2*v))/(3.1415926 * R4 ** 2 * R4 **3 * (R4 + z4))
 print("The stress at z = 4ft is: ", sigma4, "psf")
 
-sigma6 = (Q1 * 3 * z6 * r ** 2 * R6 * ( 1 - 2*v))/(3.1415926 * R6 ** 2 * R6 **3 * (R6 + z6))
+sigma6 = (Q1 * 3 * z6 * r1 ** 2 * R6 * ( 1 - 2*v))/(3.1415926 * R6 ** 2 * R6 **3 * (R6 + z6))
 print("The stress at z = 6ft is: ", sigma6, "psf")
 
-sigma8 = (Q1 * 3 * z8 * r ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
+sigma8 = (Q1 * 3 * z8 * r1 ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
 print("The stress at z = 8ft is: ", sigma8, "psf")
 
 import matplotlib.pyplot as plt
@@ -113,7 +113,7 @@ plt.show()
 # z2 - z8 = Various depths of soil (ft)
 
 q = 10000
-PL = 4
+PL4 = 4
 B = 6
 A = 36
 Q2 = 90000
@@ -262,7 +262,7 @@ plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Sigma vs. Depth for Scenario 2')
+plt.title('Sigma h vs. Depth for Scenario 2')
 plt.grid(True)
 plt.legend()
 
@@ -284,7 +284,7 @@ plt.show()
 # z2 - z8 = Various depths of soil (ft)
 
 q = 10000
-PL = 9
+PL9 = 9
 B = 6
 A = 36
 Q3 = 40000
@@ -540,7 +540,7 @@ sigma = [sigma2a9, sigma4a9, sigma6a9, sigma8a9,
 z = [z2, z4, z6, z8] * 9  # Repeat z values for each point load
 
 # Configure the plot
-plt.figure(figsize=(10, 6))  # Adjust figure size if needed
+plt.figure(figsize=(20, 12))  # Adjust figure size if needed
 plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
@@ -550,4 +550,101 @@ plt.legend()
 
 # Show the plot
 plt.show()
+
+#############################################################
+# Scenario 4 - Poisson's Sensitivity Analysis
+#############################################################
+# psa = possion's sensitivity analysis
+# vpsa = poisson's ratio
+# PLpsa = Point load coordinates
+# Q4 = Force at each point load acting on the footing (lb) (q*A)/PL
+# q = stress on the footing (psf)
+# PL = number of point loads acting on the footing
+# PLpsax = x coordinate of PL
+# PLpsay = y coordinate of PL
+# B = Width of footing (ft)
+# L = Length of footing (ft)
+# A = Area of footing (sqr. ft)
+# Q = Force at each point load acting on the footing (lb)
+# x = Distance of wall from front of footing
+# zpsa = depth
+
+q = 10000
+PL = 1
+B = 6
+A = 36
+Q4 = 360000
+x = 5
+z5 = 5
+
+# # Retaining wall coordinates # #
+xW = 0
+yW = 0
+
+# # Scenario 4 coordinates (in feet) # #
+
+PLpsa = (8,0)
+PLpsax = 8
+PLpsay = 0
+
+# # Experimental Poisson's Ratios # #
+vpsa1 = 0.00
+vpsa2 = 0.05
+vpsa3 = 0.10
+vpsa4 = 0.15
+vpsa5 = 0.20
+vpsa6 = 0.25
+vpsa7 = 0.30
+vpsa8 = 0.35
+vpsa9 = 0.40
+vpsa10 = 0.45
+vpsa11 = 0.50
+
+zpsa = 5
+
+# # Plan view radial calculation, r^2 = x^2 + y^2 (in feet) # #
+rpsa = math.sqrt((PLpsax**2)+(PLpsay**2))
+
+#############################################################
+# R @ z5
+#############################################################
+
+Rpsa = math.sqrt(( PLpsax ** 2 ) + ( PLpsay ** 2 ) + (zpsa ** 2))
+
+# # Stress Calculations Scenario 3 # #
+
+sigmavpsa1 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa1))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa1, "psf")
+
+sigmavpsa2 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa2))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa2, "psf")
+
+sigmavpsa3 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa3))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa3, "psf")
+
+sigmavpsa4 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa4))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa4, "psf")
+
+sigmavpsa5 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa5))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa5, "psf")
+
+sigmavpsa6 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa6))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa6, "psf")
+
+sigmavpsa7 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa7))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa7, "psf")
+
+sigmavpsa8 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa8))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa8, "psf")
+
+sigmavpsa9 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa9))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa9, "psf")
+
+sigmavpsa10 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa10))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa10, "psf")
+
+sigmavpsa11 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa11))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa11, "psf")
+
+vpsa = [vpsa1, vpsa2, vpsa3, vpsa4, vpsa5, vpsa6, vpsa7, vpsa8, vpsa9, vpsa10, vpsa11]
 
