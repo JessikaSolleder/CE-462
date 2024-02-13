@@ -533,12 +533,12 @@ print("The total stress at z = 8ft is: ", sigma8abcdefghi9, "psf")
 
 import matplotlib.pyplot as plt
 
-# Extract sigma and z values from the code
+# # Extract sigma and z values from the code # #
 sigmas3 = [sigma2abcdefghi9, sigma4abcdefghi9, sigma6abcdefghi9, sigma8abcdefghi9]
 
 z = [z2, z4, z6, z8]  # Repeat z values for each point load
 
-# Configure the plot
+# # Configure the plot # #
 plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigmas3, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
@@ -719,7 +719,7 @@ zuser2 = 2
 zuser4 = 4
 zuser6 = 6
 zuser8 = 8
-vuser=0.35
+vuser = 0.35
 
 xW = 0
 yW = 0
@@ -758,8 +758,14 @@ if inputq:
         input_number = int(inputq)
         
         # Perform calculations
-        sigmauser1 = (input_number * 6 * 3 * zuser2 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser2))
-        
+        sigmauser2 = (input_number * 6 * 3 * zuser2 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser2))
+        print("The stress at z = 2ft is: ", sigmauser2, "psf")
+        sigmauser4 = (input_number * 6 * 3 * zuser4 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser4))
+        print("The stress at z = 5ft is: ", sigmauser4, "psf")
+        sigmauser6 = (input_number * 6 * 3 * zuser6 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser6))
+        print("The stress at z = 5ft is: ", sigmauser6, "psf")
+        sigmauser8 = (input_number * 6 * 3 * zuser8 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser8))
+        print("The stress at z = 5ft is: ", sigmauser8, "psf")
         
         # Display the results
         print("Input Number:", input_number)
@@ -769,6 +775,18 @@ if inputq:
 else:
     print("No input provided.")
 
+sigmauser = [sigmauser2, sigmauser4,sigmauser6, sigmauser8]
+zuser = [zuser2, zuser4, zuser6, zuser8]
+# # Configure the plot # #
+plt.figure(figsize=(10, 6))  # Adjust figure size if needed
+plt.plot(sigmauser, zuser, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.xlabel('Sigma (psf)')
+plt.ylabel('Depth (ft)')
+plt.title('Sigma h vs. Depth: Experimental Scenario')
+plt.grid(True)
+plt.legend()
 
+# Show the plot
+plt.show()
 
 
