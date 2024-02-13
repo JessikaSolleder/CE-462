@@ -95,7 +95,7 @@ plt.figure(figsize=(8, 6))
 plt.plot(sigmas1, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Stress vs. Depth for Scenario 1')
+plt.title('Sigma h vs. Depth: Scenario 1')
 plt.grid(True)
 plt.legend()
 
@@ -267,7 +267,7 @@ plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigmas2, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Sigma h vs. Depth for Scenario 2')
+plt.title('Sigma h vs. Depth: Scenario 2')
 plt.grid(True)
 plt.legend()
 
@@ -539,11 +539,11 @@ sigmas3 = [sigma2abcdefghi9, sigma4abcdefghi9, sigma6abcdefghi9, sigma8abcdefghi
 z = [z2, z4, z6, z8]  # Repeat z values for each point load
 
 # Configure the plot
-plt.figure(figsize=(20, 12))  # Adjust figure size if needed
+plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigmas3, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Sigma vs. z for Scenario 3')
+plt.title('Sigma h vs. Depth: Scenario 3')
 plt.grid(True)
 plt.legend()
 
@@ -646,7 +646,19 @@ print("The stress at z = 5ft is: ", sigmavpsa11, "psf")
 
 vpsa = [vpsa1, vpsa2, vpsa3, vpsa4, vpsa5, vpsa6, vpsa7, vpsa8, vpsa9, vpsa10, vpsa11]
 
-sigmvpsa = [sigmavpsa1, sigmavpsa2, sigmavpsa3, sigmavpsa4, sigmavpsa5, sigmavpsa6, sigmavpsa7, sigmavpsa8, sigmavpsa9, sigmavpsa10, sigmavpsa11]
+sigmavpsa = [sigmavpsa1, sigmavpsa2, sigmavpsa3, sigmavpsa4, sigmavpsa5, sigmavpsa6, sigmavpsa7, sigmavpsa8, sigmavpsa9, sigmavpsa10, sigmavpsa11]
+
+# # Configure the plot # #
+plt.figure(figsize=(10, 6))  # Adjust figure size if needed
+plt.plot(sigmavpsa, vpsa, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.xlabel('Sigma (psf)')
+plt.ylabel('Poissons Ratio (unitless)')
+plt.title('Sigma h v Poissons Ratio')
+plt.grid(True)
+plt.legend()
+
+# Show the plot
+plt.show()
 
 ####################################################################################
 # Extra experimentation: Allow user input to calculate stress in different scenarios
@@ -673,12 +685,10 @@ root.withdraw()
 
 # # Message box for user # #
 
-messagebox.showinfo("Instructions", "Please use the following input boxes to experiment.\n"
-                    "Both boxes must be filled in. \n"
-                    "All scenarios assume an area of 36 sqft, a Poissson's ratio of 0.35, and 6 point loads. \n")
+messagebox.showinfo("Instructions", "Please use the following input box to experiment.\n"
+                    "All calculations will assume an area of 36 sqft, a Poissson's ratio of 0.35, and 6 point loads. \n")
 
 # # Create a pop-up dialog for user input # #
-inputz = simpledialog.askstring("User Input", "Enter depth value (z,ft):")
 inputq = simpledialog.askstring("User Input", "Enter total force acting on the footing (q,psf):")
 
 # # Display the user's input # #
@@ -688,12 +698,11 @@ messagebox.showinfo("Calculations", "You're calculations are coming next. For no
 root.destroy()
 
 import numpy
-import matplotlib.pyplot as plt
 from PIL import Image
 
 ImageAddress = 'C:\python images\liquid limit meme.jpg'
 ImageItself = Image.open(ImageAddress)
-ImageNumpyFormat = np.asarray(ImageItself)
+ImageNumpyFormat = (ImageItself)
 plt.imshow(ImageNumpyFormat)
 plt.draw()
 plt.pause(5) # pause how many seconds
@@ -701,13 +710,15 @@ plt.close()
 
 # # Calculations based on user input # #
 
-quser = inputq
 PL6 = 6
 B = 6
 A = 36
-Quser = (inputq*A)/6
+#Quser = (inputq*36)/6
 x = 5
-zuser = inputz
+zuser2 = 2
+zuser4 = 4
+zuser6 = 6
+zuser8 = 8
 vuser=0.35
 
 xW = 0
@@ -737,12 +748,27 @@ PL6f = (10, 1.5)
 PL6fx = 10
 PL6fy = 1.5
 
-rpsa = math.sqrt((PLpsax**2)+(PLpsay**2))
+ruser = math.sqrt((PL6ax**2)+(PL6ay**2))
 
-Rpsa = math.sqrt(( PLpsax ** 2 ) + ( PLpsay ** 2 ) + (zpsa ** 2))
+Ruser = math.sqrt(( PL6ax ** 2 ) + ( PL6ay ** 2 ) + (zuser2 ** 2))
 
-sigmauser1 = (Quser * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa1))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
-print("The stress at z = 5ft is: ", sigmavpsa1, "psf")
+if inputq:
+    try:
+        # Convert the user input to a numerical value
+        input_number = int(inputq)
+        
+        # Perform calculations
+        sigmauser1 = (input_number * 6 * 3 * zuser2 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser2))
+        
+        
+        # Display the results
+        print("Input Number:", input_number)
+        
+    except: 
+        ("An error occured, please try again")
+else:
+    print("No input provided.")
+
 
 
 
