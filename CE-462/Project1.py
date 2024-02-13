@@ -713,7 +713,7 @@ plt.close()
 PL6 = 6
 B = 6
 A = 36
-#Quser = (inputq*36)/6
+# Quser = (inputq*36)/6
 x = 5
 zuser2 = 2
 zuser4 = 4
@@ -786,7 +786,7 @@ plt.title('Sigma h vs. Depth: Experimental Scenario')
 plt.grid(True)
 plt.legend()
 
-# Show the plot
+# # Show the plot # #
 plt.show()
 
 
