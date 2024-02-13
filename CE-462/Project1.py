@@ -724,33 +724,84 @@ vuser = 0.35
 xW = 0
 yW = 0
 
-PL6a = (6,1.5)
-PL6ax = 6
-PL6ay = 1.5
+PLuser6a = (6,1.5)
+PLuser6ax = 6
+PLuser6ay = 1.5
 
-PL6b = (6, 1.5)
-PL6bx = 6
-PL6by = 1.5
+PLuser6b = (6, 1.5)
+PLuser6bx = 6
+PLuser6by = 1.5
 
-PL6c = (8, 1.5)
-PL6cx = 8
-PL6cy = 1.5
+PLuser6c = (8, 1.5)
+PLuser6cx = 8
+PLuser6cy = 1.5
 
-PL6d = (8, 1.5)
-PL6dx = 8
-PL6dy = 1.5
+PLuser6d = (8, 1.5)
+PLuser6dx = 8
+PLuser6dy = 1.5
 
-PL6e = (10, 1.5)
-PL6ex = 10
-PL6ey = 1.5
+PLuser6e = (10, 1.5)
+PLuser6ex = 10
+PLuser6ey = 1.5
 
-PL6f = (10, 1.5)
-PL6fx = 10
-PL6fy = 1.5
+PuserL6f = (10, 1.5)
+PLuser6fx = 10
+PLuser6fy = 1.5
 
-ruser = math.sqrt((PL6ax**2)+(PL6ay**2))
+rusera = math.sqrt((PLuser6ax**2)+(PLuser6ay**2))
+ruserb = math.sqrt((PLuser6bx**2)+(PLuser6by**2))
+ruserc = math.sqrt((PLuser6cx**2)+(PLuser6cy**2))
+ruserd = math.sqrt((PLuser6dx**2)+(PLuser6dy**2))
+rusere = math.sqrt((PLuser6ex**2)+(PLuser6ey**2))
+ruserf = math.sqrt((PLuser6fx**2)+(PLuser6fy**2))
 
-Ruser = math.sqrt(( PL6ax ** 2 ) + ( PL6ay ** 2 ) + (zuser2 ** 2))
+#############################################################
+# R @ z2
+#############################################################
+Rusera2 = math.sqrt(( PLuser6ax ** 2 ) + ( PLuser6ay ** 2 ) + (zuser2 ** 2))
+Ruserb2 = math.sqrt(( PLuser6bx ** 2 ) + ( PLuser6by ** 2 ) + (zuser2 ** 2))
+Ruserc2 = math.sqrt(( PLuser6cx ** 2 ) + ( PLuser6cy ** 2 ) + (zuser2 ** 2))
+Ruserd2 = math.sqrt(( PLuser6dx ** 2 ) + ( PLuser6dy ** 2 ) + (zuser2 ** 2))
+Rusere2 = math.sqrt(( PLuser6ex ** 2 ) + ( PLuser6ey ** 2 ) + (zuser2 ** 2))
+Ruserf2 = math.sqrt(( PLuser6fx ** 2 ) + ( PLuser6fy ** 2 ) + (zuser2 ** 2))
+Ruser2 = Rusera2 + Ruserb2 + Ruserc2 + Ruserd2 + Rusere2 + Ruserf2
+print("Radial Calculation for z = 2ft at PL: ", Ruser2 )
+
+#############################################################
+# R @ z4
+#############################################################
+Rusera4 = math.sqrt(( PLuser6ax ** 2 ) + ( PLuser6ay ** 2 ) + (zuser4 ** 2))
+Ruserb4 = math.sqrt(( PLuser6bx ** 2 ) + ( PLuser6by ** 2 ) + (zuser4 ** 2))
+Ruserc4 = math.sqrt(( PLuser6cx ** 2 ) + ( PLuser6cy ** 2 ) + (zuser4 ** 2))
+Ruserd4 = math.sqrt(( PLuser6dx ** 2 ) + ( PLuser6dy ** 2 ) + (zuser4 ** 2))
+Rusere4 = math.sqrt(( PLuser6ex ** 2 ) + ( PLuser6ey ** 2 ) + (zuser4 ** 2))
+Ruserf4 = math.sqrt(( PLuser6fx ** 2 ) + ( PLuser6fy ** 2 ) + (zuser4 ** 2))
+Ruser4 = Rusera4 + Ruserb4 + Ruserc4 + Ruserd4 + Rusere4 + Ruserf4
+print("Radial Calculation for z = 2ft at PL: ", Ruser4 )
+
+#############################################################
+# R @ z6
+#############################################################
+Rusera6 = math.sqrt(( PLuser6ax ** 2 ) + ( PLuser6ay ** 2 ) + (zuser6 ** 2))
+Ruserb6 = math.sqrt(( PLuser6bx ** 2 ) + ( PLuser6by ** 2 ) + (zuser6 ** 2))
+Ruserc6 = math.sqrt(( PLuser6cx ** 2 ) + ( PLuser6cy ** 2 ) + (zuser6 ** 2))
+Ruserd6 = math.sqrt(( PLuser6dx ** 2 ) + ( PLuser6dy ** 2 ) + (zuser6 ** 2))
+Rusere6 = math.sqrt(( PLuser6ex ** 2 ) + ( PLuser6ey ** 2 ) + (zuser6 ** 2))
+Ruserf6 = math.sqrt(( PLuser6fx ** 2 ) + ( PLuser6fy ** 2 ) + (zuser6 ** 2))
+Ruser6 = Rusera6 + Ruserb6 + Ruserc6 + Ruserd6 + Rusere6 + Ruserf6
+print("Radial Calculation for z = 2ft at PL: ", Ruser6 )
+
+#############################################################
+# R @ z8
+#############################################################
+Rusera8 = math.sqrt(( PLuser6ax ** 2 ) + ( PLuser6ay ** 2 ) + (zuser8 ** 2))
+Ruserb8 = math.sqrt(( PLuser6bx ** 2 ) + ( PLuser6by ** 2 ) + (zuser8 ** 2))
+Ruserc8 = math.sqrt(( PLuser6cx ** 2 ) + ( PLuser6cy ** 2 ) + (zuser8 ** 2))
+Ruserd8 = math.sqrt(( PLuser6dx ** 2 ) + ( PLuser6dy ** 2 ) + (zuser8 ** 2))
+Rusere8 = math.sqrt(( PLuser6ex ** 2 ) + ( PLuser6ey ** 2 ) + (zuser8 ** 2))
+Ruserf8 = math.sqrt(( PLuser6fx ** 2 ) + ( PLuser6fy ** 2 ) + (zuser8 ** 2))
+Ruser8 = Rusera8 + Ruserb8 + Ruserc8 + Ruserd8 + Rusere8 + Ruserf8
+print("Radial Calculation for z = 2ft at PL: ", Ruser8 )
 
 if inputq:
     try:
@@ -758,14 +809,46 @@ if inputq:
         input_number = int(inputq)
         
         # Perform calculations
-        sigmauser2 = (input_number * 6 * 3 * zuser2 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser2))
-        print("The stress at z = 2ft is: ", sigmauser2, "psf")
-        sigmauser4 = (input_number * 6 * 3 * zuser4 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser4))
-        print("The stress at z = 5ft is: ", sigmauser4, "psf")
-        sigmauser6 = (input_number * 6 * 3 * zuser6 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser6))
-        print("The stress at z = 5ft is: ", sigmauser6, "psf")
-        sigmauser8 = (input_number * 6 * 3 * zuser8 * ruser ** 2 * Ruser * ( 1 - 2*vuser))/(3.1415926 * Ruser ** 2 * Ruser **3 * (Ruser + zuser8))
-        print("The stress at z = 5ft is: ", sigmauser8, "psf")
+        
+        # # z = 2ft # #
+        
+        sigmauser2a = (input_number * 6 * 3 * zuser2 * rusera ** 2 * Rusera2 * ( 1 - 2*vuser))/(3.1415926 * Rusera2 ** 2 * Rusera2 **3 * (Rusera2 + zuser2))
+        sigmauser2b = (input_number * 6 * 3 * zuser2 * ruserb ** 2 * Ruserb2 * ( 1 - 2*vuser))/(3.1415926 * Ruserb2 ** 2 * Ruserb2 **3 * (Ruserb2 + zuser2))
+        sigmauser2c = (input_number * 6 * 3 * zuser2 * ruserc ** 2 * Ruserc2 * ( 1 - 2*vuser))/(3.1415926 * Ruserc2 ** 2 * Ruserc2 **3 * (Ruserc2 + zuser2))
+        sigmauser2d = (input_number * 6 * 3 * zuser2 * ruserd ** 2 * Ruserd2 * ( 1 - 2*vuser))/(3.1415926 * Ruserd2 ** 2 * Ruserd2 **3 * (Ruserd2 + zuser2))
+        sigmauser2e = (input_number * 6 * 3 * zuser2 * rusere ** 2 * Rusere2 * ( 1 - 2*vuser))/(3.1415926 * Rusere2 ** 2 * Rusere2 **3 * (Rusere2 + zuser2))
+        sigmauser2f = (input_number * 6 * 3 * zuser2 * ruserf ** 2 * Ruserf2 * ( 1 - 2*vuser))/(3.1415926 * Ruserf2 ** 2 * Ruserf2 **3 * (Ruserf2 + zuser2))
+        sigmauser2 = sigmauser2a + sigmauser2b + sigmauser2c + sigmauser2d + sigmauser2e + sigmauser2f
+        
+        # # z = 4 ft # #
+
+        sigmauser4a = (input_number * 6 * 3 * zuser4 * rusera ** 2 * Rusera4 * ( 1 - 2*vuser))/(3.1415926 * Rusera4 ** 2 * Rusera4 **3 * (Rusera4 + zuser4))
+        sigmauser4b = (input_number * 6 * 3 * zuser4 * ruserb ** 2 * Ruserb4 * ( 1 - 2*vuser))/(3.1415926 * Ruserb4 ** 2 * Ruserb4 **3 * (Ruserb4 + zuser4))
+        sigmauser4c = (input_number * 6 * 3 * zuser4 * ruserc ** 2 * Ruserc4 * ( 1 - 2*vuser))/(3.1415926 * Ruserc4 ** 2 * Ruserc4 **3 * (Ruserc4 + zuser4))
+        sigmauser4d = (input_number * 6 * 3 * zuser4 * ruserd ** 2 * Ruserd4 * ( 1 - 2*vuser))/(3.1415926 * Ruserd4 ** 2 * Ruserd4 **3 * (Ruserd4 + zuser4))
+        sigmauser4e = (input_number * 6 * 3 * zuser4 * rusere ** 2 * Rusere4 * ( 1 - 2*vuser))/(3.1415926 * Rusere4 ** 2 * Rusere4 **3 * (Rusere4 + zuser4))
+        sigmauser4f = (input_number * 6 * 3 * zuser4 * ruserf ** 2 * Ruserf4 * ( 1 - 2*vuser))/(3.1415926 * Ruserf4 ** 2 * Ruserf4 **3 * (Ruserf4 + zuser4))
+        sigmauser4 = sigmauser4a + sigmauser4b + sigmauser4c + sigmauser4d + sigmauser4e + sigmauser4f
+
+        # # z = 6ft # #
+
+        sigmauser6a = (input_number * 6 * 3 * zuser6 * rusera ** 2 * Rusera6 * ( 1 - 2*vuser))/(3.1415926 * Rusera6 ** 2 * Rusera6 **3 * (Rusera6 + zuser6))
+        sigmauser6b = (input_number * 6 * 3 * zuser6 * ruserb ** 2 * Ruserb6 * ( 1 - 2*vuser))/(3.1415926 * Ruserb6 ** 2 * Ruserb6 **3 * (Ruserb6 + zuser6))
+        sigmauser6c = (input_number * 6 * 3 * zuser6* ruserc ** 2 * Ruserc6 * ( 1 - 2*vuser))/(3.1415926 * Ruserc6 ** 2 * Ruserc6 **3 * (Ruserc6 + zuser6))
+        sigmauser6d = (input_number * 6 * 3 * zuser6 * ruserd ** 2 * Ruserd6 * ( 1 - 2*vuser))/(3.1415926 * Ruserd6 ** 2 * Ruserd6 **3 * (Ruserd6 + zuser6))
+        sigmauser6e = (input_number * 6 * 3 * zuser6 * rusere ** 2 * Rusere6 * ( 1 - 2*vuser))/(3.1415926 * Rusere6 ** 2 * Rusere6 **3 * (Rusere6 + zuser6))
+        sigmauser6f = (input_number * 6 * 3 * zuser6 * ruserf ** 2 * Ruserf6 * ( 1 - 2*vuser))/(3.1415926 * Ruserf6 ** 2 * Ruserf6 **3 * (Ruserf6 + zuser6))
+        sigmauser6 = sigmauser6a + sigmauser6b + sigmauser6c + sigmauser6d + sigmauser6e + sigmauser6f
+        
+        # # z = 8ft
+        
+        sigmauser8a = (input_number * 6 * 3 * zuser8 * rusera ** 2 * Rusera8 * ( 1 - 2*vuser))/(3.1415926 * Rusera8 ** 2 * Rusera8 **3 * (Rusera8 + zuser8))
+        sigmauser8b = (input_number * 6 * 3 * zuser8 * ruserb ** 2 * Ruserb8 * ( 1 - 2*vuser))/(3.1415926 * Ruserb8 ** 2 * Ruserb8 **3 * (Ruserb8 + zuser8))
+        sigmauser8c = (input_number * 6 * 3 * zuser8 * ruserc ** 2 * Ruserc8 * ( 1 - 2*vuser))/(3.1415926 * Ruserc8 ** 2 * Ruserc8 **3 * (Ruserc8 + zuser8))
+        sigmauser8d = (input_number * 6 * 3 * zuser8 * ruserd ** 2 * Ruserd8 * ( 1 - 2*vuser))/(3.1415926 * Ruserd8 ** 2 * Ruserd8 **3 * (Ruserd8 + zuser8))
+        sigmauser8e = (input_number * 6 * 3 * zuser8 * rusere ** 2 * Rusere8 * ( 1 - 2*vuser))/(3.1415926 * Rusere8 ** 2 * Rusere8 **3 * (Rusere8 + zuser8))
+        sigmauser8f = (input_number * 6 * 3 * zuser8 * ruserf ** 2 * Ruserf8 * ( 1 - 2*vuser))/(3.1415926 * Ruserf8 ** 2 * Ruserf8 **3 * (Ruserf8 + zuser8))
+        sigmauser8 = sigmauser8a + sigmauser8b + sigmauser8c + sigmauser8d + sigmauser8e + sigmauser8f
         
         # Display the results
         print("Input Number:", input_number)
