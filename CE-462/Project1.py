@@ -551,7 +551,7 @@ plt.legend()
 plt.show()
 
 #############################################################
-# Scenario 4 - Poisson's Sensitivity Analysis
+#  Poisson's Sensitivity Analysis
 #############################################################
 # psa = possion's sensitivity analysis
 # vpsa = poisson's ratio
