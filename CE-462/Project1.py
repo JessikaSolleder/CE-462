@@ -651,6 +651,17 @@ vpsa = [vpsa1, vpsa2, vpsa3, vpsa4, vpsa5, vpsa6, vpsa7, vpsa8, vpsa9, vpsa10, v
 ####################################################################################
 # Extra experimentation: Allow user input to calculate stress in different scenarios
 ####################################################################################
+# v = poisson's ratio
+# PLuser = Point load coordinates input by user
+# Quser = Force at each point load acting on the footing (lb) (q*A)/PL
+# quser = stress on the footing (psf)
+# PLuserx = x coordinate of PLuser
+# PLusery = y coordinate of PLuser
+# B = Width of footing (ft)
+# L = Length of footing (ft)
+# A = Area of footing (sqr. ft)
+# x = Distance of wall from front of footing
+# zuser = depth
 
 import tkinter as tk
 from tkinter import simpledialog
@@ -664,12 +675,69 @@ root.withdraw()
 
 messagebox.showinfo("Instructions", "Please use the following series of input boxes to experiment with different scenarios.\n"
                     "All boxes must be filled in. \n"
-                    "All scenarios assume an area of 36 square feet. \n")
+                    "All scenarios assume an area of 36 square feet and 6 point loads. \n")
 
 # # Create a pop-up dialog for user input # #
 inputz = simpledialog.askstring("User Input", "Enter depth value (z):")
-inputPL = simpledialog.askstring("User Input", "Enter number of point loads (PL):")
-inputQ = simpledialog.askstring("User Input", "Enter total force acting on the footing (q):")
+inputq = simpledialog.askstring("User Input", "Enter total force acting on the footing (q):")
+
+# # Calculations based on user input # #
+
+quser = inputq
+PL6 = 6
+B = 6
+A = 36
+Quser = inputq/A
+x = 5
+zuser = inputz
+
+xW = 0
+yW = 0
+
+PL9a = (6,2)
+PL9ax = 6
+PL9ay = 2
+
+PL9b = (6, 0)
+PL9bx = 6
+PL9by = 0
+
+PL9c = (6, 2)
+PL9cx = 6
+PL9cy = 2
+
+PL9d = (8, 2)
+PL9dx = 8
+PL9dy = 2
+
+PL9e = (8, 0)
+PL9ex = 8
+PL9ey = 0
+
+PL9f = (8, 2)
+PL9fx = 8
+PL9fy = 2
+
+PL9g = (10, 2)
+PL9gx = 10
+PL9gy = 2
+
+PL9h = (10, 0)
+PL9hx = 10
+PL9hy = 0
+
+PL9i = (10, 2)
+PL9ix = 10
+PL9iy = 2
+
+rpsa = math.sqrt((PLpsax**2)+(PLpsay**2))
+
+Rpsa = math.sqrt(( PLpsax ** 2 ) + ( PLpsay ** 2 ) + (zpsa ** 2))
+
+sigmavpsa1 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa1))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+print("The stress at z = 5ft is: ", sigmavpsa1, "psf")
+
+
 
 # # Display the user's input # #
 print("You entered:", inputz, inputPL, inputQ, " You're calculations are coming next.")
