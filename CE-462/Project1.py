@@ -95,7 +95,7 @@ plt.figure(figsize=(8, 6))
 plt.plot(sigmas1, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Sigma h vs. Depth: Scenario 1')
+plt.title('Figure 1 - Sigma h vs. Depth: Scenario 1')
 plt.grid(True)
 plt.legend()
 
@@ -267,7 +267,7 @@ plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigmas2, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Sigma h vs. Depth: Scenario 2')
+plt.title('Figure 2 - Sigma h vs. Depth: Scenario 2')
 plt.grid(True)
 plt.legend()
 
@@ -543,7 +543,7 @@ plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigmas3, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Sigma h vs. Depth: Scenario 3')
+plt.title('Figure 3 - Sigma h vs. Depth: Scenario 3')
 plt.grid(True)
 plt.legend()
 
@@ -653,7 +653,7 @@ plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigmavpsa, vpsa, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Poissons Ratio (unitless)')
-plt.title('Sigma h v Poissons Ratio')
+plt.title('Figure 4 - Sigma h v Poissons Ratio')
 plt.grid(True)
 plt.legend()
 
@@ -782,7 +782,7 @@ plt.figure(figsize=(10, 6))  # Adjust figure size if needed
 plt.plot(sigmauser, zuser, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
-plt.title('Sigma h vs. Depth: Experimental Scenario')
+plt.title('Figure 5 - Sigma h vs. Depth: Experimental Scenario')
 plt.grid(True)
 plt.legend()
 
