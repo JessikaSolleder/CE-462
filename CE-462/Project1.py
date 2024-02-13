@@ -13,6 +13,7 @@
 # z2 - z8 = Various depths of soil (ft)
 
 import math
+from tkinter import messagebox
  
 q = 10000
 PL = 1
@@ -565,7 +566,6 @@ plt.show()
 # B = Width of footing (ft)
 # L = Length of footing (ft)
 # A = Area of footing (sqr. ft)
-# Q = Force at each point load acting on the footing (lb)
 # x = Distance of wall from front of footing
 # zpsa = depth
 
@@ -581,7 +581,7 @@ z5 = 5
 xW = 0
 yW = 0
 
-# # Scenario 4 coordinates (in feet) # #
+# # Scenario 4, coordinates (in feet) # #
 
 PLpsa = (8,0)
 PLpsax = 8
@@ -647,4 +647,34 @@ sigmavpsa11 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa11))/(3.1415926 * Rp
 print("The stress at z = 5ft is: ", sigmavpsa11, "psf")
 
 vpsa = [vpsa1, vpsa2, vpsa3, vpsa4, vpsa5, vpsa6, vpsa7, vpsa8, vpsa9, vpsa10, vpsa11]
+
+####################################################################################
+# Extra experimentation: Allow user input to calculate stress in different scenarios
+####################################################################################
+
+import tkinter as tk
+from tkinter import simpledialog
+
+root = tk.Tk()
+
+# # Hide the main window # #
+root.withdraw() 
+
+# # Message box for user # #
+
+messagebox.showinfo("Instructions", "Please use the following series of input boxes to experiment with different scenarios.\n"
+                    "All boxes must be filled in. \n"
+                    "All scenarios assume an area of 36 square feet. \n")
+
+# # Create a pop-up dialog for user input # #
+inputz = simpledialog.askstring("User Input", "Enter depth value (z):")
+inputPL = simpledialog.askstring("User Input", "Enter number of point loads (PL):")
+inputQ = simpledialog.askstring("User Input", "Enter total force acting on the footing (q):")
+
+# # Display the user's input # #
+print("You entered:", inputz, inputPL, inputQ, " You're calculations are coming next.")
+
+# # Close the tkinter window # #
+root.destroy()
+
 
