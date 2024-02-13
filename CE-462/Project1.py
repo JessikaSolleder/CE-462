@@ -27,6 +27,9 @@ z4 = 4
 z6 = 6
 z8 = 8
 
+# # Print scenario info # #
+print("The following information pertains to Scenario 1: 1 point load\n")
+
 # # Retaining wall coordinates # #
 xW = 0
 yW = 0
@@ -79,17 +82,17 @@ sigma6 = (Q1 * 3 * z6 * r1 ** 2 * R6 * ( 1 - 2*v))/(3.1415926 * R6 ** 2 * R6 **3
 print("The stress at z = 6ft is: ", sigma6, "psf")
 
 sigma8 = (Q1 * 3 * z8 * r1 ** 2 * R8 * ( 1 - 2*v))/(3.1415926 * R8 ** 2 * R8 **3 * (R8 + z8))
-print("The stress at z = 8ft is: ", sigma8, "psf")
+print("The stress at z = 8ft is: ", sigma8, "psf\n")
 
 import matplotlib.pyplot as plt
 
 # Extract sigma and z values from the code
-sigma = [sigma2, sigma4, sigma6, sigma8]
+sigmas1 = [sigma2, sigma4, sigma6, sigma8]
 z = [z2, z4, z6, z8]
 
 # Configure the plot
 plt.figure(figsize=(8, 6))
-plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.plot(sigmas1, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
 plt.title('Stress vs. Depth for Scenario 1')
@@ -124,6 +127,9 @@ z2 = 2
 z4 = 4
 z6 = 6
 z8 = 8
+
+# # Print scenario info # #
+print("The following information pertains to Scenario 2: 4 point loads\n")
 
 # # Retaining wall coordinates # #
 xW = 0
@@ -246,21 +252,19 @@ sigma8b = (Q2 * 3 * z8 * r4b ** 2 * R8b * ( 1 - 2*v))/(3.1415926 * R8b ** 2 * R8
 sigma8c = (Q2 * 3 * z8 * r4c ** 2 * R8c * ( 1 - 2*v))/(3.1415926 * R8c ** 2 * R8c **3 * (R8c + z8))
 sigma8d = (Q2 * 3 * z8 * r4d ** 2 * R8d * ( 1 - 2*v))/(3.1415926 * R8d ** 2 * R8d **3 * (R8d + z8))
 sigma8abcd = sigma8a + sigma8b + sigma8c + sigma8d
-print("The total stress at z = 8ft is: ", sigma8abcd, "psf")
+print("The total stress at z = 8ft is: ", sigma8abcd, "psf\n")
 
 import matplotlib.pyplot as plt
 
-# Extract sigma and z values from the code
-sigma = [sigma2a, sigma4a, sigma6a, sigma8a,
-         sigma2b, sigma4b, sigma6b, sigma8b,  
-         sigma2c, sigma4c, sigma6c, sigma8c,  
-         sigma2d, sigma4d, sigma6d, sigma8d]  
+# # Extract sigma and z values from the code
 
-z = [z2, z4, z6, z8] * 4  # Repeat z values for each point load
+sigmas2 = [sigma2abcd,sigma4abcd,sigma6abcd,sigma8abcd]  
+
+z = [z2, z4, z6, z8]  
 
 # Configure the plot
 plt.figure(figsize=(10, 6))  # Adjust figure size if needed
-plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.plot(sigmas2, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
 plt.title('Sigma h vs. Depth for Scenario 2')
@@ -295,6 +299,9 @@ z2 = 2
 z4 = 4
 z6 = 6
 z8 = 8
+
+# # Print scenario info # #
+print("The following information pertains to Scenario 3: 9 point loads\n")
 
 # # Retaining wall coordinates # #
 xW = 0
@@ -527,22 +534,13 @@ print("The total stress at z = 8ft is: ", sigma8abcdefghi9, "psf")
 import matplotlib.pyplot as plt
 
 # Extract sigma and z values from the code
-sigma = [sigma2a9, sigma4a9, sigma6a9, sigma8a9,  
-         sigma2b9, sigma4b9, sigma6b9, sigma8b9,  
-         sigma2c9, sigma4c9, sigma6c9, sigma8c9,
-         sigma2d9, sigma4d9, sigma6d9, sigma8d9,
-         sigma2e9, sigma4e9, sigma6e9, sigma8e9,
-         sigma2f9, sigma4f9, sigma6f9, sigma8f9,
-         sigma2g9, sigma4g9, sigma6g9, sigma8g9,
-         sigma2h9, sigma4g9, sigma6g9, sigma8g9,
-         sigma2i9, sigma4i9, sigma6i9, sigma8i9,
-         
-         ]
-z = [z2, z4, z6, z8] * 9  # Repeat z values for each point load
+sigmas3 = [sigma2abcdefghi9, sigma4abcdefghi9, sigma6abcdefghi9, sigma8abcdefghi9]
+
+z = [z2, z4, z6, z8]  # Repeat z values for each point load
 
 # Configure the plot
 plt.figure(figsize=(20, 12))  # Adjust figure size if needed
-plt.plot(sigma, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
+plt.plot(sigmas3, z, marker='o', color='b', linestyle='-', label='Sigma vs. z')
 plt.xlabel('Sigma (psf)')
 plt.ylabel('Depth (ft)')
 plt.title('Sigma vs. z for Scenario 3')
@@ -566,7 +564,7 @@ plt.show()
 # B = Width of footing (ft)
 # L = Length of footing (ft)
 # A = Area of footing (sqr. ft)
-# x = Distance of wall from front of footing
+# xpsa = Distance of wall from front of footing
 # zpsa = depth
 
 q = 10000
@@ -648,6 +646,8 @@ print("The stress at z = 5ft is: ", sigmavpsa11, "psf")
 
 vpsa = [vpsa1, vpsa2, vpsa3, vpsa4, vpsa5, vpsa6, vpsa7, vpsa8, vpsa9, vpsa10, vpsa11]
 
+sigmvpsa = [sigmavpsa1, sigmavpsa2, sigmavpsa3, sigmavpsa4, sigmavpsa5, sigmavpsa6, sigmavpsa7, sigmavpsa8, sigmavpsa9, sigmavpsa10, sigmavpsa11]
+
 ####################################################################################
 # Extra experimentation: Allow user input to calculate stress in different scenarios
 ####################################################################################
@@ -673,13 +673,31 @@ root.withdraw()
 
 # # Message box for user # #
 
-messagebox.showinfo("Instructions", "Please use the following series of input boxes to experiment with different scenarios.\n"
-                    "All boxes must be filled in. \n"
-                    "All scenarios assume an area of 36 square feet and 6 point loads. \n")
+messagebox.showinfo("Instructions", "Please use the following input boxes to experiment.\n"
+                    "Both boxes must be filled in. \n"
+                    "All scenarios assume an area of 36 sqft, a Poissson's ratio of 0.35, and 6 point loads. \n")
 
 # # Create a pop-up dialog for user input # #
-inputz = simpledialog.askstring("User Input", "Enter depth value (z):")
-inputq = simpledialog.askstring("User Input", "Enter total force acting on the footing (q):")
+inputz = simpledialog.askstring("User Input", "Enter depth value (z,ft):")
+inputq = simpledialog.askstring("User Input", "Enter total force acting on the footing (q,psf):")
+
+# # Display the user's input # #
+messagebox.showinfo("Calculations", "You're calculations are coming next. For now, please enjoy the following message\n")
+
+# # Close the tkinter window # #
+root.destroy()
+
+import numpy
+import matplotlib.pyplot as plt
+from PIL import Image
+
+ImageAddress = 'C:\python images\liquid limit meme.jpg'
+ImageItself = Image.open(ImageAddress)
+ImageNumpyFormat = np.asarray(ImageItself)
+plt.imshow(ImageNumpyFormat)
+plt.draw()
+plt.pause(5) # pause how many seconds
+plt.close()
 
 # # Calculations based on user input # #
 
@@ -687,62 +705,44 @@ quser = inputq
 PL6 = 6
 B = 6
 A = 36
-Quser = inputq/A
+Quser = (inputq*A)/6
 x = 5
 zuser = inputz
+vuser=0.35
 
 xW = 0
 yW = 0
 
-PL9a = (6,2)
-PL9ax = 6
-PL9ay = 2
+PL6a = (6,1.5)
+PL6ax = 6
+PL6ay = 1.5
 
-PL9b = (6, 0)
-PL9bx = 6
-PL9by = 0
+PL6b = (6, 1.5)
+PL6bx = 6
+PL6by = 1.5
 
-PL9c = (6, 2)
-PL9cx = 6
-PL9cy = 2
+PL6c = (8, 1.5)
+PL6cx = 8
+PL6cy = 1.5
 
-PL9d = (8, 2)
-PL9dx = 8
-PL9dy = 2
+PL6d = (8, 1.5)
+PL6dx = 8
+PL6dy = 1.5
 
-PL9e = (8, 0)
-PL9ex = 8
-PL9ey = 0
+PL6e = (10, 1.5)
+PL6ex = 10
+PL6ey = 1.5
 
-PL9f = (8, 2)
-PL9fx = 8
-PL9fy = 2
-
-PL9g = (10, 2)
-PL9gx = 10
-PL9gy = 2
-
-PL9h = (10, 0)
-PL9hx = 10
-PL9hy = 0
-
-PL9i = (10, 2)
-PL9ix = 10
-PL9iy = 2
+PL6f = (10, 1.5)
+PL6fx = 10
+PL6fy = 1.5
 
 rpsa = math.sqrt((PLpsax**2)+(PLpsay**2))
 
 Rpsa = math.sqrt(( PLpsax ** 2 ) + ( PLpsay ** 2 ) + (zpsa ** 2))
 
-sigmavpsa1 = (Q4 * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa1))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
+sigmauser1 = (Quser * 3 * z5 * rpsa ** 2 * Rpsa * ( 1 - 2*vpsa1))/(3.1415926 * Rpsa ** 2 * Rpsa **3 * (Rpsa + z5))
 print("The stress at z = 5ft is: ", sigmavpsa1, "psf")
 
-
-
-# # Display the user's input # #
-print("You entered:", inputz, inputPL, inputQ, " You're calculations are coming next.")
-
-# # Close the tkinter window # #
-root.destroy()
 
 
